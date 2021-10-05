@@ -42,5 +42,23 @@ def test_is_antipalindrome():
     assert is_antipalindrome(2783) == True
     assert is_antipalindrome(2773) == False
 
+def main():
+    while True:
+        print ("7. Determină dacă un număr este antipalindrom")
+        print(("11. Afișează toți anii bisecți între doi ani dați (inclusiv anii dați)"))
+        print("x. Iesire din porogram")
+        optiune = input("Alegeti optiunea:")
+        if optiune== "7":
+            n = int(input("Cititi numarul: "))
+            print(is_antipalindrome(n))
+        elif optiune== "11":
+            n = int(input("Cititi anul: "))
+            print(get_leap_years(n))
+        elif optiune =="x":
+            break
+        else:
+            print("Optiune invalida.")
 test_get_leap_years()
 test_is_antipalindrome()
+main()
+
