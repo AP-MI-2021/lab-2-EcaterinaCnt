@@ -20,6 +20,11 @@ def test_get_leap_years():
     assert get_leap_years(1990, 2001) == [1992, 1996, 2000]
 
 def is_antipalindrome(n) -> bool:
+    '''
+    Determina daca un numar este antipalindrom.
+    :param n: numar intreg
+    :return: returneaza True daca numarul este antipalindrom si False daca nu este
+    '''
     cifre_n = []
     while n > 0:
         cifre_n.append(n % 10)
@@ -41,6 +46,7 @@ def is_antipalindrome(n) -> bool:
 def test_is_antipalindrome():
     assert is_antipalindrome(2783) == True
     assert is_antipalindrome(2773) == False
+    assert is_antipalindrome(1234) == True
 
 def get_base_2(n: str) -> str:
     '''
@@ -61,6 +67,7 @@ def get_base_2(n: str) -> str:
 def test_get_base_2():
     assert get_base_2(123) == 1111011
     assert get_base_2(75) == 1001011
+    assert get_base_2(31) == 11111
 
 def main():
     while True:
