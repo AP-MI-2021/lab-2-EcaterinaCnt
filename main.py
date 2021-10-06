@@ -42,23 +42,48 @@ def test_is_antipalindrome():
     assert is_antipalindrome(2783) == True
     assert is_antipalindrome(2773) == False
 
+def get_base_2(n: str) -> str:
+    '''
+    Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10.
+    :param n: numar in baza 10
+    :return: numar in baza 2
+    '''
+    resturi_n =[]
+    x=0
+    while n != 0:
+        resturi_n.append(n % 2)
+        n=n //2
+    lungime = len(resturi_n)
+    for i in range (lungime-1, -1, -1):
+        x= x*10 + resturi_n[i]
+    return x
+
+def test_get_base_2():
+    assert get_base_2(123) == 1111011
+    assert get_base_2(75) == 1001011
+
 def main():
     while True:
         print ("7. Determină dacă un număr este antipalindrom")
         print(("11. Afișează toți anii bisecți între doi ani dați (inclusiv anii dați)"))
+        print("8.Transformă un număr dat din baza 10 în baza 2")
         print("x. Iesire din porogram")
-        optiune = input("Alegeti optiunea:")
-        if optiune== "7":
+        optiune = input("Alegeti optiunea: ")
+        if optiune == "7":
             n = int(input("Cititi numarul: "))
             print(is_antipalindrome(n))
-        elif optiune== "11":
+        elif optiune == "11":
             n = int(input("Cititi anul: "))
             print(get_leap_years(n))
+        elif optiune == "8":
+            n = int(input("Cititi numarul: "))
+            print(get_base_2(n))
         elif optiune =="x":
             break
         else:
             print("Optiune invalida.")
 test_get_leap_years()
 test_is_antipalindrome()
+test_get_base_2()
 main()
 
