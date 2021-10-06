@@ -85,5 +85,6 @@ def main():
 test_get_leap_years()
 test_is_antipalindrome()
 test_get_base_2()
-main()
+if __name__ == "__main__":
+    main()
 
