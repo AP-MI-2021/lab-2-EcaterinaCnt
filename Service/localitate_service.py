@@ -27,7 +27,9 @@ class LocalitateService:
         :return:
         """
         localitate = Localitate(id_localitate, id_centru, nume_loc, distanta, CNP)
+        self.localitate_validator.validare_localitate(localitate, self.localitate_repository)
         self.localitate_repository.create(localitate)
+
 
     def get_all(self):
         """

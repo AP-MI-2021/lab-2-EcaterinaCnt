@@ -10,10 +10,10 @@ class Console:
         self.localitate_service = localitate_service
 
     def show_menu(self):
-        print('1. Adauga localitate')
-        print('2. Adauga centru')
-        print('sl. Afiseaza localitatile')
-        print('sc. Afiseaza centru')
+        print('1. Adauga cntru')
+        print('2. Adauga localitate')
+        print('sl. Afiseaza centru')
+        print('sr. Afiseaza localitate')
         print('x. Exit')
 
     def run_console(self):
@@ -30,6 +30,8 @@ class Console:
                 self.handle_add_localitate()
             elif opt == 'sr':
                 self.handle_show_all(self.localitate_service.get_all())
+            elif opt =='ord':
+                self.handle_show_all(self.centru_service.ordon_centru_capac())
             elif opt == 'x':
                 break
             else:

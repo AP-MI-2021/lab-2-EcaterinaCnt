@@ -5,8 +5,7 @@ from Repository.repository import Repository
 class LocalitateValidator:
     def validare_localitate(self, localitate: Localitate, localitate_repository: Repository):
         erori = []
-        self.localitate_repository = localitate_repository
-        lst_localitate = self.localitate_repository.read()
+        lst_localitate = localitate_repository.read()
         if localitate.id_centru_vaccinare is None:
             erori.append('Localitatea nu exista!')
         if len(localitate.nume_loc) < 3:

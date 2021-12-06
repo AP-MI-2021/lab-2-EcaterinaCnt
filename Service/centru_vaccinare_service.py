@@ -35,3 +35,6 @@ class CentruService:
         :return: o lista cu toate centrele
         """
         return self.centru_repository.read()
+
+    def ordon_centru_capac(self):
+        return sorted(self.centru_repository.read(), key=lambda x: x.capacitate, reverse=True)
